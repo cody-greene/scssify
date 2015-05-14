@@ -1,0 +1,17 @@
+{
+  "name": "scssify",
+  "version": "0.0.1",
+  "description": "Sass browserify transformer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "browserify",
+    "sass",
+    "scss",
+    "browserify transform"
+  ],
+  "author": "Chris Hoage",
+  "license": "MIT"
+}
