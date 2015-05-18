@@ -67,6 +67,14 @@ or though the API options.
 
 [![scssify](https://nodei.co/npm/scssify.png?small=true)](https://nodei.co/npm/scssify)
 
+#Development
+
+  1. Clone the repo
+  2. `npm install`
+  3. `npm run dev`
+
+This project uses Babel to transpile ES6 to ES5.
+
 # License
 
 [MIT](/LICENSE)
