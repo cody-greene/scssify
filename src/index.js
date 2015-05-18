@@ -56,7 +56,7 @@ const Transformer = tools.makeStringTransform(MODULE_NAME, {
       browsers: [].concat(options.autoprefix),
       map: {
         inline: sassOpts.sourceMapEmbed,
-        prev: result.map.toString()
+        prev: sassOpts.sourceMapEmbed ? result.map.toString() : null
       }
     }).css : result.css
     const cssString = JSON.stringify(css.toString())
