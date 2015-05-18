@@ -1,7 +1,13 @@
-var gulp    = require('gulp');
-var changed = require('gulp-changed');
-var babel   = require('gulp-babel');
-var eslint  = require('gulp-eslint');
+var gulp        = require('gulp');
+var test        = require('tape');
+var run         = require('tape-run');
+var spec        = require('tap-spec');
+var browserify  = require('browserify');
+var scssify     = require('./');
+var changed     = require('gulp-changed');
+var babel       = require('gulp-babel');
+var eslint      = require('gulp-eslint');
+var eventstream = require('event-stream')
 
 var conf = {
   js:     ['./src/*.js', './src/**/*.js'],
@@ -19,13 +25,24 @@ gulp.task('transpile', function () {
 
 gulp.task('lint', function () {
   return gulp.src(conf.js)
-      .pipe(changed(conf.dist))
       .pipe(eslint())
       .pipe(eslint.format());
 });
+
+gulp.task('test', function () {
+  var stream = test.createStream()
+      .pipe(spec())
+      .pipe(process.stdout);
+
+  require('./tests');
+
+  return stream;
+})
 
 gulp.task('watch', function() {
   gulp.watch(conf.js, ['lint', 'transpile']);
 });
 
-gulp.task('default', ['transpile'])
+gulp.task('build', ['lint', 'transpile'])
+
+gulp.task('default', ['build'])

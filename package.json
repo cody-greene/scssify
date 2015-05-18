@@ -5,7 +5,9 @@
   "main": "./lib/index.js",
   "browser": "./lib/browser.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./node_modules/.bin/gulp",
+    "dev": "./node_modules/.bin/gulp build watch",
+    "test": "./node_modules/.bin/gulp test"
   },
   "keywords": [
     "browserify",
@@ -17,10 +19,16 @@
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^3.1.1",
+    "browserify": "^10.2.0",
+    "event-stream": "^3.3.1",
     "gulp": "^3.8.11",
     "gulp-babel": "^5.1.0",
     "gulp-changed": "^1.2.1",
-    "gulp-eslint": "^0.12.0"
+    "gulp-eslint": "^0.12.0",
+    "phantomjs": "^1.9.16",
+    "tap-spec": "^3.0.0",
+    "tape": "^4.0.0",
+    "tape-run": "^1.0.0"
   },
   "dependencies": {
     "autoprefixer-core": "^5.1.11",
