@@ -1,7 +1,7 @@
 import sass from 'node-sass'
 import autoprefix from 'autoprefixer-core'
 import tools from 'browserify-transform-tools'
-import merge from 'object-merge'
+import {merge, omit} from 'lodash'
 import path from 'path'
 
 const defaults = {
@@ -27,7 +27,7 @@ const Transformer = tools.makeStringTransform(MODULE_NAME, {
     evaluateArguments: true
 }, function(content, opts, done) {
   const {file, config} = opts
-  const options = merge({}, defaults, config)
+  const options = merge({}, defaults, omit(config, '_flags'))
   const {sass: userSassOpts} = options
   delete options.sass
   const sassOpts = merge({}, userSassOpts)
