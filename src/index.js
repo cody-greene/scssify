@@ -50,7 +50,7 @@ const Transformer = tools.makeStringTransform(MODULE_NAME, {
   const href = path.join(relativePath, path.basename(file))
 
   sass.render(sassOpts, function (err, result) {
-    if (err) return done(new SyntaxError(err.file+': '+err.message +' ('+err.line+':'+err.column+')'))
+    if (err) return done(new SyntaxError(err.file + ': ' + err.message + ' (' + err.line + ':' + err.column + ')'))
     let out = ''
     const css = options.autoprefix ? autoprefix.process(result.css, {
       browsers: [].concat(options.autoprefix),

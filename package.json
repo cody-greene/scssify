@@ -1,6 +1,6 @@
 {
   "name": "scssify",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Sass browserify transformer",
   "repository": "chrishoage/scssify",
   "main": "./lib/index.js",
@@ -36,7 +36,6 @@
     "autoprefixer-core": "^5.1.11",
     "browserify-transform-tools": "^1.4.2",
     "lodash": "^3.8.0",
-    "node-sass": "^3.1.0",
-    "object-merge": "^2.5.1"
+    "node-sass": "^3.1.0"
   }
 }
