@@ -3,7 +3,6 @@ var test        = require('tape');
 var run         = require('tape-run');
 var spec        = require('tap-spec');
 var browserify  = require('browserify');
-var scssify     = require('./');
 var changed     = require('gulp-changed');
 var babel       = require('gulp-babel');
 var eslint      = require('gulp-eslint');
