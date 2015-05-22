@@ -2,7 +2,7 @@ var test = require('tape');
 var run = require('tape-run');
 
 var browserify = require('browserify');
-var scssify = require('../lib');
+var scssify = require('../lib/index');
 
 var tests = [
   {
