@@ -20,6 +20,7 @@
   "author": "Chris Hoage",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^5.2.0",
     "babel-eslint": "^3.1.1",
     "browserify": "^10.2.0",
     "event-stream": "^3.3.1",
@@ -33,9 +34,10 @@
     "tape-run": "^1.0.0"
   },
   "dependencies": {
-    "autoprefixer-core": "~5.1.11",
     "browserify-transform-tools": "~1.4.2",
     "lodash": "~3.8.0",
-    "node-sass": "~3.1.0"
+    "node-sass": "~3.1.0",
+    "postcss": "^4.1.11",
+    "resolve": "^1.1.6"
   }
 }

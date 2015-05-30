@@ -28,7 +28,7 @@ gulp.task('lint', function () {
       .pipe(eslint.format());
 });
 
-gulp.task('test', function () {
+gulp.task('test', ['build'], function () {
   var stream = test.createStream()
       .pipe(spec())
       .pipe(process.stdout);

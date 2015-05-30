@@ -47,6 +47,9 @@ var tests = [
         'sourceMap': true,
         'sourceMapEmbed': true,
         'sourceMapContents': true,
+      },
+      "postcss": {
+        "autoprefixer": {}
       }
     }
   }

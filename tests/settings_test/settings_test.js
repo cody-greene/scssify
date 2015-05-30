@@ -9,6 +9,8 @@ test('settings test', function (t) {
     t.equal(styles.tag, undefined, 'not auto inserted');
     t.ok(styles.css.indexOf('sourceMap') > -1, 'source map included');
 
+    t.ok(styles.css.indexOf('-webkit') > -1, 'postcss plugins ran')
+
     var tag = require('scssify').createLink('data:text/css;base64,' +btoa(styles.css));
     console.log(styles.css)
     window.setTimeout(function () {

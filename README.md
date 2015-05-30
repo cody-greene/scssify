@@ -37,6 +37,8 @@ $ npm i scssify
 The default settings are listed below. They may be overridden though the CLI, package.json (`scssify` property)
 or though the API options.
 
+In order for PostCSS plugins to be used, they must be installed in your projects `package.json`
+
 ``` js
   var browserify = require('browserify');
   var scssify = require('scssify');
@@ -55,9 +57,14 @@ or though the API options.
         'sourceMapContents': false,
         'outputStyle': 'compressed'
       },
-      'autoprefix': false,
-      //you may specify what browsers to auto prefix here
-      //'autoprefix': ['last 2 versions'],
+      'postcss': false,
+      //you may specify what postcss plugins to use here
+      'postcss': {
+        'autoprefixer': {
+          'browsers': ['last 2 versions'] //optional config, use an empty object for defualts
+        }
+      }
+      ,
       'rootDir': process.cwd()
     })
     .bundle()

@@ -1,8 +1,9 @@
 import sass from 'node-sass'
-import autoprefix from 'autoprefixer-core'
+import postcss from 'postcss'
 import tools from 'browserify-transform-tools'
 import {merge, omit} from 'lodash'
 import path from 'path'
+import resolve from 'resolve'
 
 const defaults = {
   'autoInject': {
@@ -16,7 +17,7 @@ const defaults = {
     'sourceMapContents': false,
     'outputStyle': 'compressed'
   },
-  'autoprefix': false,
+  'postcss': false,
   'rootDir': process.cwd()
 }
 
@@ -42,18 +43,23 @@ const Transformer = tools.makeStringTransform(MODULE_NAME, {
     options.autoInject = merge({}, defaults.autoInject)
   }
 
-  if (options.autoprefix === true) {
-    options.autoprefix = []
+  if (options.postcss !== false && !(typeof options.postcss === 'object')) {
+    return done(new Error('Postcss config must be false or an object of plugins'))
   }
 
   const relativePath = path.relative(options.rootDir, path.dirname(file))
   const href = path.join(relativePath, path.basename(file))
 
+  const postcssTransforms = options.postcss ? Object.keys(options.postcss).map((pluginName) => {
+    const pluginOpts = options.postcss[pluginName]
+    const plugin = require(resolve.sync(pluginName, {basedir: process.cwd()}))
+    return plugin(pluginOpts)
+  }) : null
+
   sass.render(sassOpts, function (err, result) {
     if (err) return done(new SyntaxError(err.file + ': ' + err.message + ' (' + err.line + ':' + err.column + ')'))
     let out = ''
-    const css = options.autoprefix ? autoprefix.process(result.css, {
-      browsers: [].concat(options.autoprefix),
+    const css = options.postcss ? postcss(postcssTransforms).process(result.css, {
       map: {
         inline: sassOpts.sourceMapEmbed,
         prev: sassOpts.sourceMapEmbed ? result.map.toString() : null
