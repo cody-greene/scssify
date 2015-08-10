@@ -24,8 +24,8 @@ const defaults = {
 const MODULE_NAME = path.basename(path.dirname(__dirname))
 
 const Transformer = tools.makeStringTransform(MODULE_NAME, {
-    includeExtensions: ['.css', '.sass', '.scss'],
-    evaluateArguments: true
+  includeExtensions: ['.css', '.sass', '.scss'],
+  evaluateArguments: true
 }, function(content, opts, done) {
   const {file, config} = opts
   const options = merge({}, defaults, omit(config, '_flags'))
