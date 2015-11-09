@@ -37,7 +37,7 @@
     "browserify-transform-tools": "~1.4.2",
     "lodash": "~3.10.1",
     "node-sass": "^3.3.3",
-    "postcss": "~4.1.11",
+    "postcss": "^5.0.11",
     "resolve": "^1.1.6"
   }
 }
