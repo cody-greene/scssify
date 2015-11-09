@@ -20,7 +20,7 @@
   "author": "Chris Hoage",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^5.2.0",
+    "autoprefixer": "^6.1.0",
     "babel-eslint": "^4.0.5",
     "browserify": "^11.0.1",
     "event-stream": "^3.3.1",
