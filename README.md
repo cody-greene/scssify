@@ -4,7 +4,7 @@ Browserify transfomer to compile [Sass](http://sass-lang.com) styles and optiona
 
 [![Build Status](https://travis-ci.org/chrishoage/scssify.svg?branch=master)](https://travis-ci.org/chrishoage/scssify) [![Dependency Status](https://david-dm.org/chrishoage/scssify.svg)](https://david-dm.org/chrishoage/scssify) [![devDependency Status](https://david-dm.org/chrishoage/scssify/dev-status.svg)](https://david-dm.org/chrishoage/scssify#info=devDependencies)
 
-## I have abandoned browserify in favor of webpack. It has far more momentum and a more cohesive plug in system. I will gladly accept pull requests or turn over the project to whomever wishes to maintain scssify.
+## This project is no longer actively maintained. If anyone is interested in taking over the project please open an issue and I can make that happen.
 
 # Example
 
