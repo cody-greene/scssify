@@ -6,10 +6,7 @@
   "main": "./lib/index.js",
   "browser": "./lib/browser.js",
   "scripts": {
-    "prepublish": "npm run build && npm test",
-    "build": "./node_modules/.bin/gulp",
-    "dev": "./node_modules/.bin/gulp build watch",
-    "test": "./node_modules/.bin/gulp test"
+    "test": "node tests/index.js"
   },
   "keywords": [
     "browserify",
@@ -19,6 +16,7 @@
   ],
   "author": "Chris Hoage",
   "license": "MIT",
+  "engines": {"node": ">=4.4.0", "npm": ">=3.0.0"},
   "eslintConfig": {
     "root": true,
     "extends": "./node_modules/eslint-config/strict.yml",
@@ -26,16 +24,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.1.1",
-    "babel-eslint": "^4.0.5",
     "browserify": "^11.0.1",
     "eslint-config": "cody-greene/eslint-config#v2.2.1",
-    "event-stream": "^3.3.1",
-    "gulp": "^3.8.11",
-    "gulp-babel": "^5.1.0",
-    "gulp-changed": "^1.2.1",
-    "gulp-eslint": "^1.0.0",
     "phantomjs": "^1.9.16",
-    "tap-spec": "^4.0.0",
     "tape": "^4.0.0",
     "tape-run": "^1.0.0"
   },
