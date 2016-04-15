@@ -16,7 +16,7 @@
   ],
   "author": "Chris Hoage",
   "license": "MIT",
-  "engines": {"node": ">=4.4.0", "npm": ">=3.0.0"},
+  "engines": {"node": ">=4.0.0"},
   "eslintConfig": {
     "root": true,
     "extends": "./node_modules/eslint-config/strict.yml",
