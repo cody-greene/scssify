@@ -27,6 +27,7 @@ const Transformer = tools.makeStringTransform(MODULE_NAME, {
   includeExtensions: ['.css', '.sass', '.scss'],
   evaluateArguments: true
 }, function(content, opts, done) {
+  const stream = this
   const {file, config} = opts
   const options = merge({}, defaults, omit(config, '_flags'))
   const {sass: userSassOpts} = options
@@ -79,8 +80,20 @@ const Transformer = tools.makeStringTransform(MODULE_NAME, {
 
     out += ` module.exports.css = ${cssString};`
 
+    emitDependencies(stream, result.stats.includedFiles)
     return done(null, out)
   })
 })
+
+/**
+ * Let browserify/watchify know about nested imports
+ * Without these events watchify will not rebundle when a "@imported" file is changed
+ * @param {EventEmitter} stream
+ * @param {string[]} deps
+ */
+function emitDependencies(stream, deps) {
+  for (let index = 0; index < deps.length; ++index)
+    stream.emit('file', deps[index])
+}
 
 export default Transformer
