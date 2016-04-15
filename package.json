@@ -19,10 +19,16 @@
   ],
   "author": "Chris Hoage",
   "license": "MIT",
+  "eslintConfig": {
+    "root": true,
+    "extends": "./node_modules/eslint-config/strict.yml",
+    "env": {"node": true, "es6": true}
+  },
   "devDependencies": {
     "autoprefixer": "^6.1.1",
     "babel-eslint": "^4.0.5",
     "browserify": "^11.0.1",
+    "eslint-config": "cody-greene/eslint-config#v2.2.1",
     "event-stream": "^3.3.1",
     "gulp": "^3.8.11",
     "gulp-babel": "^5.1.0",
