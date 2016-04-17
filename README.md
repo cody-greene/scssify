@@ -2,9 +2,7 @@
 
 Browserify transfomer to compile [Sass](http://sass-lang.com) styles and optionally inject them into the browser.
 
-[![Build Status](https://travis-ci.org/chrishoage/scssify.svg?branch=master)](https://travis-ci.org/chrishoage/scssify) [![Dependency Status](https://david-dm.org/chrishoage/scssify.svg)](https://david-dm.org/chrishoage/scssify) [![devDependency Status](https://david-dm.org/chrishoage/scssify/dev-status.svg)](https://david-dm.org/chrishoage/scssify#info=devDependencies)
-
-## This project is no longer actively maintained. If anyone is interested in taking over the project please open an issue and I can make that happen.
+[![Build Status](https://travis-ci.org/cody-greene/scssify.svg?branch=master)](https://travis-ci.org/cody-greene/scssify) [![Dependency Status](https://david-dm.org/cody-greene/scssify.svg)](https://david-dm.org/cody-greene/scssify) [![devDependency Status](https://david-dm.org/cody-greene/scssify/dev-status.svg)](https://david-dm.org/cody-greene/scssify#info=devDependencies)
 
 # Example
 

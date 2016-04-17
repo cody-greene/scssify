@@ -2,7 +2,7 @@
   "name": "scssify",
   "version": "0.3.7",
   "description": "Sass browserify transformer",
-  "repository": "chrishoage/scssify",
+  "repository": "cody-greene/scssify",
   "main": "./lib/index.js",
   "browser": "./lib/browser.js",
   "scripts": {
