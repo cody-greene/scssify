@@ -12,5 +12,6 @@ it('supports <link> tags', integration(__dirname + '/util/basic.scss', {
   assert.equal(context.exports.tag.tagName, 'LINK', 'created <link> element')
   assert.equal(applied.backgroundColor, 'blue', 'background-color changed')
   assert.equal(applied.color, 'red', 'text color changed')
+  assert.equal(typeof context.exports.css, 'undefined', 'raw css not exported')
   done()
 }))
