@@ -24,9 +24,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.1.1",
-    "browserify": "^11.0.1",
+    "browserify": "^13.0.0",
     "eslint-config": "cody-greene/eslint-config#v2.2.1",
-    "phantomjs": "^1.9.16",
+    "phantomjs-prebuilt": "^2.0.0",
     "tape": "^4.0.0",
     "tape-run": "^1.0.0"
   },
