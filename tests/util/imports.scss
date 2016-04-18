@@ -1,7 +1,6 @@
-@import 'settings';
+@import 'vars';
 
-.import-basic {
+body {
   color: $color;
   background: $background;
 }
-

@@ -6,7 +6,8 @@
   "main": "./lib/index.js",
   "browser": "./lib/browser.js",
   "scripts": {
-    "test": "node tests/index.js"
+    "watch": "mocha tests/*.js -bwR min",
+    "test": "mocha tests/*.js -bR list"
   },
   "keywords": [
     "browserify",
@@ -24,11 +25,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.1.1",
-    "browserify": "^13.0.0",
     "eslint-config": "cody-greene/eslint-config#v2.2.1",
-    "phantomjs-prebuilt": "^2.0.0",
-    "tape": "^4.0.0",
-    "tape-run": "^1.0.0"
+    "jsdom": "^8.4.0",
+    "mocha": "^2.4.5"
   },
   "dependencies": {
     "node-sass": "^3.3.3",
