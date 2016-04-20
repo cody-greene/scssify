@@ -1,86 +1,70 @@
-# scssify #
+### scssify
+Browserify transfomer to compile [sass][] stylesheets, and automatically inject `<link>` or `<style>` tags. Correctly informs [watchify][] about any `@imports` and also supports [postcss][] plugins.
 
-Browserify transfomer to compile [Sass](http://sass-lang.com) styles and optionally inject them into the browser.
+> node >= 4.0.0
 
-[![Build Status](https://travis-ci.org/cody-greene/scssify.svg?branch=master)](https://travis-ci.org/cody-greene/scssify) [![Dependency Status](https://david-dm.org/cody-greene/scssify.svg)](https://david-dm.org/cody-greene/scssify) [![devDependency Status](https://david-dm.org/cody-greene/scssify/dev-status.svg)](https://david-dm.org/cody-greene/scssify#info=devDependencies)
+[![npm version](https://badge.fury.io/js/scssify.svg)](https://badge.fury.io/js/scssify) [![Build Status](https://travis-ci.org/cody-greene/scssify.svg?branch=master)](https://travis-ci.org/cody-greene/scssify) [![Dependency Status](https://david-dm.org/cody-greene/scssify.svg)](https://david-dm.org/cody-greene/scssify) [![devDependency Status](https://david-dm.org/cody-greene/scssify/dev-status.svg)](https://david-dm.org/cody-greene/scssify#info=devDependencies)
 
-# Example
-
-MyComponent.scss:
-``` css
+#### Example
+```css
+/* MyComponent.scss */
 .MyComponent {
   color: red;
   background: blue;
 }
 ```
 
-MyComponent.js:
-``` js
-require('./MyComponent.scss');
-
+```javascript
+// MyComponent.js
+require('./MyComponent.scss') // or .sass, or .css
 console.log('MyComponent background is blue')
 ```
 
-Indented Sass syntax may be used with the `.sass` extension:
-``` js
-require('./MyComponent.sass');
-```
+#### Settings
+The default settings are listed below.
 
-Install scssify:
+```javascript
+const browserify = require('browserify')
+const scssify = require('scssify')
+browserify('entry.js')
+  .transform(scssify, {
+    // Disable auto-injection entirely with autoInject: false
+    autoInject: { // auto-inject a <link> tag by default
+      verbose: false, // add data-href path to the file when styleTag is used
+      styleTag: false // use a <style> tag instead
+    },
 
-```
-$ npm i scssify
-```
+    // require('./MyComponent.scss').css === '.MyComponent{color:red;background:blue}'
+    // autoInject: false, will also enable this
+    // pre 1.x.x, this is enabled by default
+    export: false,
 
-## Settings
-The default settings are listed below. They may be overridden though the CLI, package.json (`scssify` property)
-or though the API options.
+    // Pass options to the compiler, check the node-sass project for more details
+    sass: {
+      sourceComments: false,
+      sourceMap: false,
+      sourceMapEmbed: false,
+      sourceMapContents: false,
+      outputStyle: 'compressed'
+    },
 
-In order for PostCSS plugins to be used, they must be installed in your projects `package.json`
+    rootDir: process.cwd(),
 
-``` js
-  var browserify = require('browserify');
-  var scssify = require('scssify');
-  browserify('entry.js')
-    .transform(scssify, {
-      'autoInject': { //autoInject may be set to true to use defaults
-        'verbose': false, //verbose adds data-href path to the file when styleTag is used
-        'styleTag': false //When styleTag is false, a <link> tag is used
-      },
-      //To turn off autoInject, set autoInject to false
-      //'autoInject': false,
-      'sass': { //Full sass options
-        'sourceComments': false,
-        'sourceMap': false,
-        'sourceMapEmbed': false,
-        'sourceMapContents': false,
-        'outputStyle': 'compressed'
-      },
-      'postcss': false,
-      //you may specify what postcss plugins to use here
-      'postcss': {
-        'autoprefixer': {
-          'browsers': ['last 2 versions'] //optional config, use an empty object for defualts
-        }
+    // Configure postcss plugins too! (no default)
+    postcss: {
+      autoprefixer: {
+        browsers: ['last 2 versions']
       }
-      ,
-      'rootDir': process.cwd()
-    })
-    .bundle()
-````
+    }
+  })
+  .bundle()
+```
 
-# Install
+Command line usage:
+```
+$ browserify MyComponent.js -t scssify >bundle.js
+```
 
-[![scssify](https://nodei.co/npm/scssify.png?small=true)](https://nodei.co/npm/scssify)
-
-#Development
-
-  1. Clone the repo
-  2. `npm install`
-  3. `npm run dev`
-
-This project uses Babel to transpile ES6 to ES5.
-
-# License
-
-[MIT](/LICENSE)
+[sass]: http://sass-lang.com
+[postcss]: https://github.com/postcss/postcss
+[watchify]: https://github.com/substack/watchify
