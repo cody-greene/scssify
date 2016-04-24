@@ -8,7 +8,7 @@
   "files": ["lib/"],
   "scripts": {
     "watch": "mocha tests/*.js -bwR min",
-    "test": "mocha tests/*.js -bR list"
+    "test": "mocha tests/*.js -bR tap"
   },
   "keywords": [
     "browserify",
