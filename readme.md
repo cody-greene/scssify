@@ -41,6 +41,7 @@ browserify('entry.js')
 
     // Pass options to the compiler, check the node-sass project for more details
     sass: {
+      importer: 'custom-importers.js',
       sourceComments: false,
       sourceMap: false,
       sourceMapEmbed: false,
