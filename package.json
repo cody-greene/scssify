@@ -1,6 +1,6 @@
 {
   "name": "scssify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Sass browserify transformer",
   "repository": "cody-greene/scssify",
   "main": "./lib/index.js",

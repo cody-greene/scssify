@@ -1,5 +1,9 @@
 # scssify change log
 
+## 2016-05-16 v1.1.0
+New features:
+- [[`002a0ad`](https://github.com/cody-greene/scssify/commit/002a0ad)] load custom importer files: this means you can set a custom sass importer in `package.json:browserify.transform`, like the `--importer` flag when using `node-sass` directly
+
 ## 2016-04-20 v1.0.0 *breaking changes*
 The project is no longer transpiled before publishing; Node.js `4.0.0` & up is now required. The package is also a bit smaller now since the `lodash` and `browserify-transform-tools` dependencies have been removed. Hurray for fewer dependencies!
 
