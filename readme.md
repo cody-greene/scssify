@@ -42,6 +42,12 @@ browserify('entry.js')
     // Pass options to the compiler, check the node-sass project for more details
     sass: {
       importer: 'custom-importers.js',
+
+      // This will let the importer state be reset if scssify
+      // is called several times within the same process, e.g. by factor-bundle
+      // should export a factory function (which returns an importer function)
+      importerFactory: 'custom-importer-factory.js',
+
       sourceComments: false,
       sourceMap: false,
       sourceMapEmbed: false,

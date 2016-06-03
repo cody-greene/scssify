@@ -1,5 +1,9 @@
 # scssify change log
 
+## 2016-06-16 v1.2.0
+New features:
+- [[`2963d08`](https://github.com/cody-greene/scssify/commit/2963d08)] allowing for importer factory functions - this will let the importer state be reset if scssify is called several times within the same process, e.g. by factor-bundle
+
 ## 2016-05-16 v1.1.0
 New features:
 - [[`002a0ad`](https://github.com/cody-greene/scssify/commit/002a0ad)] load custom importer files: this means you can set a custom sass importer in `package.json:browserify.transform`, like the `--importer` flag when using `node-sass` directly

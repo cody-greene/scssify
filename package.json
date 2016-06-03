@@ -1,6 +1,6 @@
 {
   "name": "scssify",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Sass browserify transformer",
   "repository": "cody-greene/scssify",
   "main": "./lib/index.js",
@@ -11,10 +11,9 @@
     "test": "mocha tests/*.js -bR tap"
   },
   "keywords": [
-    "browserify",
-    "sass",
-    "scss",
-    "browserify transform"
+    "browserify", "transform",
+    "browserify-transform",
+    "css", "sass", "scss"
   ],
   "author": "Chris Hoage",
   "license": "MIT",
