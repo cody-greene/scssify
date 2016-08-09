@@ -4,9 +4,7 @@ const assert = require('assert')
 const integration = require('./util/integration')
 
 it('supports <style> tags', integration(__dirname + '/util/basic.scss', {
-  autoInject: {
-    styleTag: true
-  }
+  autoInject: true
 }, function (context, done) {
   let applied = context.window.getComputedStyle(context.document.body)
   assert.equal(context.exports.tag.tagName, 'STYLE', 'created <style> element')
