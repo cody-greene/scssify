@@ -27,11 +27,11 @@
     "autoprefixer": "^6.1.1",
     "eslint-config": "cody-greene/eslint-config#v2.2.1",
     "jsdom": "^8.4.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "postcss": "^5.1.2"
   },
   "dependencies": {
     "node-sass": "^3.3.3",
-    "postcss": "~5.0.12",
     "resolve": "^1.1.6"
   }
 }
