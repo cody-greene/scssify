@@ -1,4 +1,17 @@
 # scssify change log
+## 2016-06-16 v2.0.0
+Breaking changes:
+- `<link>` tag injection removed. `<style>` tags are now the default [#14](https://github.com/cody-greene/scssify/issues/14)
+- `opt.autoInject` may now be one of `true|false|'verbose'`
+- `postcss` is no longer a hard dependency. Install it yourself if you need it.
+
+New features:
+- added `useNodeEnv` option. Will enable sourcemaps if `process.env.NODE_ENV !== 'production'` otherwise uses `'compressed'` output
+
+Fixes:
+- use pre-formatted error text from node-sass
+- handle postcss errors
+- sourcemaps should work [#15](https://github.com/cody-greene/scssify/issues/15)
 
 ## 2016-06-16 v1.2.0
 New features:

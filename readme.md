@@ -1,5 +1,5 @@
 ### scssify
-Browserify transfomer to compile [sass][] stylesheets, and automatically inject `<link>` or `<style>` tags. Correctly informs [watchify][] about any `@imports` and also supports [postcss][] plugins.
+Browserify transfomer to compile [sass][] stylesheets, and automatically inject `<style>` tags. Correctly informs [watchify][] about any `@imports` and also supports [postcss][] plugins. Sourcemaps are fully supported too!
 
 > node >= 4.0.0
 
@@ -28,36 +28,43 @@ const browserify = require('browserify')
 const scssify = require('scssify')
 browserify('entry.js')
   .transform(scssify, {
-    // Disable auto-injection entirely with autoInject: false
-    autoInject: { // auto-inject a <link> tag by default
-      verbose: false, // add data-href path to the file when styleTag is used
-      styleTag: false // use a <style> tag instead
-    },
+    // Disable <style> injection
+    autoInject: false,
+
+    // Useful for debugging; adds data-href="src/foo.scss" to <style> tags
+    autoInject: 'verbose',
 
     // require('./MyComponent.scss').css === '.MyComponent{color:red;background:blue}'
     // autoInject: false, will also enable this
     // pre 1.x.x, this is enabled by default
     export: false,
 
+    // Will enable sourcemaps if process.env.NODE_ENV !== 'production'
+    // otherwise uses 'compressed' output
+    useNodeEnv: true,
+
     // Pass options to the compiler, check the node-sass project for more details
     sass: {
+      // See the relevant node-sass documentation
       importer: 'custom-importers.js',
 
       // This will let the importer state be reset if scssify
       // is called several times within the same process, e.g. by factor-bundle
       // should export a factory function (which returns an importer function)
+      // overrides opt.sass.importer
       importerFactory: 'custom-importer-factory.js',
 
-      sourceComments: false,
-      sourceMap: false,
-      sourceMapEmbed: false,
-      sourceMapContents: false,
+      // Enable both of these to get source maps working
+      // warning: avoid using 'compressed' output together with sourcemaps
+      sourceMapEmbed: true,
+      sourceMapContents: true,
+
+      // This is the default when opt.sass is undefined
       outputStyle: 'compressed'
     },
 
-    rootDir: process.cwd(),
-
-    // Configure postcss plugins too! (no default)
+    // Configure postcss plugins too!
+    // postcss is a "soft" dependency so you may need to install it yourself
     postcss: {
       autoprefixer: {
         browsers: ['last 2 versions']
