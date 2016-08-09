@@ -20,12 +20,12 @@
   "engines": {"node": ">=4.0.0"},
   "eslintConfig": {
     "root": true,
-    "extends": "./node_modules/eslint-config/strict.yml",
+    "extends": "./node_modules/@cody-greene/eslint-config/strict.yml",
     "env": {"node": true, "es6": true}
   },
   "devDependencies": {
+    "@cody-greene/eslint-config": "2.13.0",
     "autoprefixer": "^6.1.1",
-    "eslint-config": "cody-greene/eslint-config#v2.2.1",
     "jsdom": "^8.4.0",
     "mocha": "^2.4.5",
     "postcss": "^5.1.2"
