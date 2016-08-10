@@ -39,10 +39,6 @@ browserify('entry.js')
     // pre 1.x.x, this is enabled by default
     export: false,
 
-    // Will enable sourcemaps if process.env.NODE_ENV !== 'production'
-    // otherwise uses 'compressed' output
-    useNodeEnv: true,
-
     // Pass options to the compiler, check the node-sass project for more details
     sass: {
       // See the relevant node-sass documentation
@@ -55,11 +51,11 @@ browserify('entry.js')
       importerFactory: 'custom-importer-factory.js',
 
       // Enable both of these to get source maps working
-      // warning: avoid using 'compressed' output together with sourcemaps
+      // "browserify --debug" will also enable css sourcemaps
       sourceMapEmbed: true,
       sourceMapContents: true,
 
-      // This is the default when opt.sass is undefined
+      // This is the default only when opt.sass is undefined
       outputStyle: 'compressed'
     },
 
@@ -72,6 +68,23 @@ browserify('entry.js')
     }
   })
   .bundle()
+```
+
+Example config using `package.json`:
+```json
+{
+  "browserify": {
+    "transform": [
+      ["scssify", {
+        "sass": {
+          "outputStyle": "compressed",
+          "importerFactory": "custom-importers.js",
+          "includePaths": ["node_modules", "bower_components"]
+        }
+      }],
+    ]
+  },
+}
 ```
 
 Command line usage:

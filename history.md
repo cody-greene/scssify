@@ -1,5 +1,12 @@
 # scssify change log
-## 2016-06-16 v2.0.0
+## 2016-08-10 v2.1.0
+Breaking changes:
+- removed `useNodeEnv` option; this was a bad idea.
+
+New features:
+- browserify's `--debug` option will also enable css sourcemaps. No extra configuration needed!
+
+## 2016-08-09 v2.0.0
 Breaking changes:
 - `<link>` tag injection removed. `<style>` tags are now the default [#14](https://github.com/cody-greene/scssify/issues/14)
 - `opt.autoInject` may now be one of `true|false|'verbose'`
