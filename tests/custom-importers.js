@@ -36,4 +36,4 @@ it('loads importer from factory function every time it runs', function (done) {
       done()
     })(done)
   })(done)
-});
+})

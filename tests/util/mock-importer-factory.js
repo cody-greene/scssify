@@ -1,9 +1,9 @@
 'use strict'
 const mockImporter = require('./mock-importer')
 module.exports = function () {
-  module.exports.count++;
+  module.exports.count++
   return mockImporter
 }
 
-module.exports.count = 0;
+module.exports.count = 0
 
