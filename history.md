@@ -1,4 +1,9 @@
 # scssify change log
+## 2016-11-02 v2.2.0
+Bump node-sass to `^3.10.1` from `^3.3.1` to ensure node 7 support.
+
+Also upgraded some dev dependencies.
+
 ## 2016-08-10 v2.1.0
 Breaking changes:
 - removed `useNodeEnv` option; this was a bad idea.
