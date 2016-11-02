@@ -1,6 +1,6 @@
 {
   "name": "scssify",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Sass browserify transformer",
   "repository": "cody-greene/scssify",
   "main": "./lib/index.js",
@@ -24,10 +24,10 @@
     "env": {"node": true, "es6": true}
   },
   "devDependencies": {
-    "@cody-greene/eslint-config": "2.13.0",
+    "@cody-greene/eslint-config": "3.3.1",
     "autoprefixer": "^6.1.1",
-    "jsdom": "^8.4.0",
-    "mocha": "^2.4.5",
+    "jsdom": "^9.8.3",
+    "mocha": "^3.1.2",
     "postcss": "^5.1.2"
   },
   "dependencies": {
