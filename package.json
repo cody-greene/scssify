@@ -31,7 +31,7 @@
     "postcss": "^5.1.2"
   },
   "dependencies": {
-    "node-sass": "^3.3.3",
+    "node-sass": "^3.10.1",
     "resolve": "^1.1.6"
   }
 }
