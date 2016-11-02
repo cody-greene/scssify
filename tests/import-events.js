@@ -9,7 +9,7 @@ it('emits "file" events for @imports', function (done) {
   const expectedImport = __dirname + '/util/_vars.scss'
   fs.createReadStream(entry)
   .on('error', done)
-  .pipe(scssify(entry, {}))
+  .pipe(scssify(entry, {_flags: {}}))
   .on('error', done)
   .on('file', function (imported) {
     assert.equal(imported, expectedImport)

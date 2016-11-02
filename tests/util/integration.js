@@ -12,6 +12,7 @@ const CLIENT_HELPER_CODE = fs.readFileSync('lib/browser.js', 'utf8')
  * @return {function} Pass this to tape('test-name', fn)
  */
 function createIntegrationTest(src, config, callback) {
+  if (!config._flags) config._flags = {}
   return function (done) {
     fs.createReadStream(src)
     .on('error', done)
