@@ -1,4 +1,7 @@
 # scssify change log
+## 2016-12-22 v2.2.1
+- fix a crash related to autoprefixer [#25](https://github.com/cody-greene/scssify/pull/25)
+
 ## 2016-11-02 v2.2.0
 Bump node-sass to `^3.10.1` from `^3.3.1` to ensure node 7 support.
 
