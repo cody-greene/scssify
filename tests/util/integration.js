@@ -9,9 +9,10 @@ const CLIENT_HELPER_CODE = fs.readFileSync('lib/browser.js', 'utf8')
  * @param {string} src Absolute path to a scss file
  * @param {object} config scssify parameters
  * @param {function} callback(context, assert)
+ * @param {function?} prepare(context)
  * @return {function} Pass this to tape('test-name', fn)
  */
-function createIntegrationTest(src, config, callback) {
+function createIntegrationTest(src, config, callback, prepare) {
   if (!config._flags) config._flags = {}
   return function (done) {
     fs.createReadStream(src)
@@ -26,6 +27,11 @@ function createIntegrationTest(src, config, callback) {
         window: doc.defaultView,
         document: doc,
         module: helperModule
+      })
+      if (prepare) prepare({
+        window: doc.defaultView,
+        document: doc,
+        exports: cssModule.exports
       })
       vm.runInNewContext(transformed.toString(), {
         window: doc.defaultView,

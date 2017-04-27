@@ -21,18 +21,25 @@ console.log('MyComponent background is blue')
 ```
 
 #### Settings
-The default settings are listed below.
 
 ```javascript
 const browserify = require('browserify')
 const scssify = require('scssify')
 browserify('entry.js')
   .transform(scssify, {
-    // Disable <style> injection
-    autoInject: false,
+    // Disable/enable <style> injection; true by default
+    autoInject: true,
 
     // Useful for debugging; adds data-href="src/foo.scss" to <style> tags
     autoInject: 'verbose',
+
+    // This can be an object too
+    autoInject: {
+      verbose: false,
+
+      // If true the <style> tag will be prepended to the <head>
+      prepend: false
+    },
 
     // require('./MyComponent.scss').css === '.MyComponent{color:red;background:blue}'
     // autoInject: false, will also enable this
