@@ -1,4 +1,7 @@
 # scssify change log
+## 2017-04-27 v2.3.0
+- add autoInject.prepend [#27](https://github.com/cody-greene/scssify/pull/27)
+
 ## 2016-12-22 v2.2.1
 - fix a crash related to autoprefixer [#25](https://github.com/cody-greene/scssify/pull/25)
 
