@@ -1,9 +1,9 @@
-### scssify
+### scssify2
 Browserify transfomer to compile [sass][] stylesheets, and automatically inject `<style>` tags. Correctly informs [watchify][] about any `@imports` and also supports [postcss][] plugins. Sourcemaps are fully supported too!
 
-> node >= 4.0.0
+This module was forked from https://github.com/cody-greene/scssify to add features (mainly https://github.com/cody-greene/scssify/pull/28). If this pull request was merged you're better off using the original "scssify".
 
-[![npm version](https://badge.fury.io/js/scssify.svg)](https://badge.fury.io/js/scssify) [![Build Status](https://travis-ci.org/cody-greene/scssify.svg?branch=master)](https://travis-ci.org/cody-greene/scssify) [![Dependency Status](https://david-dm.org/cody-greene/scssify.svg)](https://david-dm.org/cody-greene/scssify) [![devDependency Status](https://david-dm.org/cody-greene/scssify/dev-status.svg)](https://david-dm.org/cody-greene/scssify#info=devDependencies)
+> node >= 4.0.0
 
 #### Example
 ```css
@@ -24,7 +24,7 @@ console.log('MyComponent background is blue')
 
 ```javascript
 const browserify = require('browserify')
-const scssify = require('scssify')
+const scssify = require('scssify2')
 browserify('entry.js')
   .transform(scssify, {
     // Disable/enable <style> injection; true by default
@@ -93,7 +93,7 @@ Example config using `package.json`:
 {
   "browserify": {
     "transform": [
-      ["scssify", {
+      ["scssify2", {
         "sass": {
           "outputStyle": "compressed",
           "importerFactory": "custom-importers.js",
