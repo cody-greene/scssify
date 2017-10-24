@@ -72,6 +72,17 @@ browserify('entry.js')
       autoprefixer: {
         browsers: ['last 2 versions']
       }
+    },
+
+    // Configure postcss options
+    // The object returned by this function will be passed as-is to postcss, 
+    // with the exception of "map.inline" and "map.prev" which are controlled
+    // according to "sass.sourceMapEmbed"
+    postcssOptions: function(file) {
+      return {
+        from: file,
+        to: file
+      }
     }
   })
   .bundle()
