@@ -1,8 +1,8 @@
 {
-  "name": "scssify",
-  "version": "2.3.0",
-  "description": "Sass browserify transformer",
-  "repository": "cody-greene/scssify",
+  "name": "scssify2",
+  "version": "1.0.0",
+  "description": "Sass browserify transformer (based on https://www.npmjs.com/package/scssify)",
+  "repository": "reinaldoarrosi/scssify2",
   "main": "./lib/index.js",
   "browser": "./lib/browser.js",
   "files": ["lib/"],
@@ -15,7 +15,7 @@
     "browserify-transform",
     "css", "sass", "scss"
   ],
-  "author": "Chris Hoage",
+  "author": "Chris Hoage, Reinaldo Arrosi",
   "license": "MIT",
   "engines": {"node": ">=4.0.0"},
   "eslintConfig": {

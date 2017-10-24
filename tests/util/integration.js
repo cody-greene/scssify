@@ -38,7 +38,7 @@ function createIntegrationTest(src, config, callback, prepare) {
         document: doc,
         module: cssModule,
         require: function (req) {
-          if (req === 'scssify') return helperModule.exports
+          if (req === 'scssify2') return helperModule.exports
           throw new Error('sandboxed module: unexpected require(...)')
         }
       })
