@@ -41,7 +41,7 @@ browserify('entry.js')
       prepend: false
     },
 
-    // require('./MyComponent.scss').css === '.MyComponent{color:red;background:blue}'
+    // require('./MyComponent.scss') === '.MyComponent{color:red;background:blue}'
     // autoInject: false, will also enable this
     // pre 1.x.x, this is enabled by default
     export: false,

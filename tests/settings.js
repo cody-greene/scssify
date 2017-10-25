@@ -12,8 +12,7 @@ it('settings', integration(__dirname + '/util/basic.scss', {
     autoprefixer: {}
   }
 }, function (context, done) {
-  let css = context.exports.css
-  assert.equal(typeof context.exports.tag, 'undefined', 'not auto injected')
+  let css = context.exports
   assert.equal(typeof css, 'string', 'exported raw css')
   assert.notEqual(css.indexOf('-webkit'), -1, 'postcss plugins ran')
   done()
