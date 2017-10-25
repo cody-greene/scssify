@@ -1,37 +1,47 @@
 {
   "name": "scssify",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Sass browserify transformer",
   "repository": "cody-greene/scssify",
   "main": "./lib/index.js",
   "browser": "./lib/browser.js",
-  "files": ["lib/"],
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "watch": "mocha tests/*.js -bwR min",
     "test": "mocha tests/*.js -bR tap"
   },
   "keywords": [
-    "browserify", "transform",
+    "browserify",
+    "transform",
     "browserify-transform",
-    "css", "sass", "scss"
+    "css",
+    "sass",
+    "scss"
   ],
   "author": "Chris Hoage",
   "license": "MIT",
-  "engines": {"node": ">=4.0.0"},
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "eslintConfig": {
     "root": true,
     "extends": "./node_modules/@cody-greene/eslint-config/strict.yml",
-    "env": {"node": true, "es6": true}
+    "env": {
+      "node": true,
+      "es6": true
+    }
   },
   "devDependencies": {
     "@cody-greene/eslint-config": "3.3.1",
-    "autoprefixer": "^6.1.1",
-    "jsdom": "^9.8.3",
-    "mocha": "^3.1.2",
-    "postcss": "^5.1.2"
+    "autoprefixer": "^7.1.6",
+    "jsdom": "^11.0.3",
+    "mocha": "^4.0.1",
+    "postcss": "^6.0.13"
   },
   "dependencies": {
-    "node-sass": "^3.10.1",
+    "node-sass": "^4.5.3",
     "resolve": "^1.1.6"
   }
 }

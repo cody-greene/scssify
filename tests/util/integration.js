@@ -1,6 +1,6 @@
 'use strict'
 const scssify = require('../../lib')
-const jsdom = require('jsdom').jsdom
+const JSDOM = require('jsdom').JSDOM
 const fs = require('fs')
 const vm = require('vm')
 const CLIENT_HELPER_CODE = fs.readFileSync('lib/browser.js', 'utf8')
@@ -20,22 +20,22 @@ function createIntegrationTest(src, config, callback, prepare) {
     .pipe(scssify(src, config))
     .on('error', done)
     .once('data', function (transformed) {
-      let doc = jsdom()
+      let doc = new JSDOM(null, {runScripts: 'dangerously'})
       let helperModule = {exports: {}}
       let cssModule = {exports: {}}
       vm.runInNewContext(CLIENT_HELPER_CODE, {
-        window: doc.defaultView,
-        document: doc,
+        window: doc.window,
+        document: doc.window.document,
         module: helperModule
       })
       if (prepare) prepare({
-        window: doc.defaultView,
-        document: doc,
+        window: doc.window,
+        document: doc.window.document,
         exports: cssModule.exports
       })
       vm.runInNewContext(transformed.toString(), {
-        window: doc.defaultView,
-        document: doc,
+        window: doc.window,
+        document: doc.window.document,
         module: cssModule,
         require: function (req) {
           if (req === 'scssify') return helperModule.exports
@@ -43,8 +43,8 @@ function createIntegrationTest(src, config, callback, prepare) {
         }
       })
       callback({
-        window: doc.defaultView,
-        document: doc,
+        window: doc.window,
+        document: doc.window.document,
         exports: cssModule.exports
       }, done)
     })
