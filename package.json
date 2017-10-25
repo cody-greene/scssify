@@ -14,11 +14,12 @@
   },
   "keywords": [
     "browserify",
-    "transform",
     "browserify-transform",
     "css",
+    "postcss-runner",
     "sass",
-    "scss"
+    "scss",
+    "transform"
   ],
   "author": "Chris Hoage",
   "license": "MIT",
