@@ -1,5 +1,9 @@
 ### scssify
-Browserify transfomer to compile [sass][] stylesheets, and automatically inject `<style>` tags. Correctly informs [watchify][] about any `@imports` and also supports [postcss][] plugins. Sourcemaps are fully supported too!
+Browserify transfomer to compile [sass][] stylesheets. Features:
+- Inject a `<style>` tag at runtime or just return export the compiled css as a string
+- Correctly informs [watchify][] about any `@import`s
+- Supports [postcss][]
+- Handles sourcemaps
 
 > node >= 4.0.0
 
