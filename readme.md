@@ -1,6 +1,6 @@
 ### scssify
 Browserify transfomer to compile [sass][] stylesheets. Features:
-- Inject a `<style>` tag at runtime or just return export the compiled css as a string
+- Inject a `<style>` tag at runtime or just export the compiled css as a string
 - Correctly informs [watchify][] about any `@import`s
 - Supports [postcss][]
 - Handles sourcemaps
