@@ -5,9 +5,7 @@ Browserify transfomer to compile [sass][] stylesheets. Features:
 - Supports [postcss][]
 - Handles sourcemaps
 
-> node >= 4.0.0
-
-[![npm version](https://badge.fury.io/js/scssify.svg)](https://badge.fury.io/js/scssify) [![Build Status](https://travis-ci.org/cody-greene/scssify.svg?branch=master)](https://travis-ci.org/cody-greene/scssify) [![Dependency Status](https://david-dm.org/cody-greene/scssify.svg)](https://david-dm.org/cody-greene/scssify) [![devDependency Status](https://david-dm.org/cody-greene/scssify/dev-status.svg)](https://david-dm.org/cody-greene/scssify#info=devDependencies)
+[![npm version](https://badge.fury.io/js/scssify.svg)](https://badge.fury.io/js/scssify)
 
 #### Example
 ```css
