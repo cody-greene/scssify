@@ -15,8 +15,8 @@ it('loads custom importer files', integration(__dirname + '/util/imports.scss', 
     importer: 'tests/util/mock-importer.js'
   }
 }, function (context, done) {
-  let files = importSpy.values()
-  assert.equal(files.next().value, 'vars', 'import spy was loaded')
+  const [firstFile] = Array.from(importSpy)
+  assert.equal(firstFile, 'resolve-to-vars', 'import spy was loaded')
   done()
 }))
 

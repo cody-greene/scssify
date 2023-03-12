@@ -1,6 +1,6 @@
 {
   "name": "scssify",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Sass browserify transformer",
   "repository": "cody-greene/scssify",
   "main": "./lib/index.js",
@@ -24,7 +24,7 @@
   "author": "Chris Hoage",
   "license": "MIT",
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=14"
   },
   "eslintConfig": {
     "root": true,
@@ -35,14 +35,14 @@
     }
   },
   "devDependencies": {
-    "@cody-greene/eslint-config": "3.3.1",
-    "autoprefixer": "^7.1.6",
-    "jsdom": "^11.0.3",
-    "mocha": "^4.0.1",
-    "postcss": "^6.0.13"
+    "@cody-greene/eslint-config": "3.3.3",
+    "autoprefixer": "^10.4.0",
+    "jsdom": "^21.1.0",
+    "mocha": "^10.2.0",
+    "postcss": "^8.4.0"
   },
   "dependencies": {
-    "node-sass": "^4.5.3",
-    "resolve": "^1.1.6"
+    "resolve": "^1.1.6",
+    "sass": "^1.59.2"
   }
 }

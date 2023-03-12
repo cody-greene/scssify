@@ -1,3 +1,10 @@
+## 2023-03-12 v4.0.0
+Breaking changes:
+- Swap out the `node-sass` (deprecated) package for `sass` ([Dart Sass](https://sass-lang.com/dart-sass) @^1.59.2)
+- Custom importer functions are only called **after** attempting to load the file from disk. `node-sass` passed imports to custom importers before loading them relative to the file in which the `@import` appears. This behavior is considered incorrect because it violates the principle of *locality*, which says that it should be possible to reason about a stylesheet without knowing everything about how the entire system is set up. If a user tries to import a stylesheet relative to another stylesheet, that import should *always* work. It shouldn’t be possible for some configuration somewhere else to break it. See here for more detail: [LegacySharedOptions.importer](https://sass-lang.com/documentation/js-api/interfaces/LegacySharedOptions#importer)
+- The "file" event emits the entry file too
+- Supports node 14, 16, 18
+
 ## 2017-11-08 v3.0.1
 - adds check before displaying postcss warnings [#31](https://github.com/cody-greene/scssify/pull/31)
 

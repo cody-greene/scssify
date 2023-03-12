@@ -14,6 +14,6 @@ it('settings', integration(__dirname + '/util/basic.scss', {
 }, function (context, done) {
   let css = context.exports
   assert.equal(typeof css, 'string', 'exported raw css')
-  assert.notEqual(css.indexOf('-webkit'), -1, 'postcss plugins ran')
+  assert.notEqual(css.indexOf('-moz'), -1, 'postcss plugins ran')
   done()
 }))
