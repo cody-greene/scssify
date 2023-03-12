@@ -42,7 +42,7 @@
     "postcss": "^6.0.13"
   },
   "dependencies": {
-    "node-sass": "npm:sass@1.57.1",
+    "node-sass": "npm:sass@1.58.3",
     "resolve": "^1.1.6"
   }
 }
